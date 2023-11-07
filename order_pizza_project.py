@@ -5,7 +5,7 @@ def welcome_menu():
     medium_pizza = 1200
     large_pizza = 1800
     #  EXTRAS
-    pepperone = 30
+    pepperoni = 30
     cheese = 50
 
     print(f"Choose 1 for Small pizza = {small_pizza}\n")
@@ -24,4 +24,25 @@ def my_Choice(choice):
     else:
         print("You entered an invalid choice!! Try again\n!")
         welcome_menu()
-welcome()
+    extras(choice)    
+def extras(choice):
+    pepperoni = 50
+    cheese = 20
+
+    total_small_pizza = 800 + 50
+    total_medium_pizza = 1200 + 50
+    total_large_pizza = 1800 + 50
+
+    add_extra = input("Do you want to add extra Cheese and Pepperoni? Y/N ")
+    if add_extra == 'Y':
+        if choice == 1:
+            print("Your new bill is now 850\n")
+        elif choice == 2:
+            print("Your new bill is now 1250\n")
+        else:
+            print("Your new bill is 1850\n")
+    else:
+        print("You did not add any extras")
+
+        # Add function for checkout
+welcome_menu()

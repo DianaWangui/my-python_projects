@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-def welcome():
+def welcome_menu():
     print("Thank you for visiting Dianas Pizza Inn\nHere are the orders available\n")
-    small = "small pizza = 800"
-    medium = "medium pizza = 1200"
-    large = "large pizza = 1600\n"
+    small_pizza = 800
+    medium_pizza = 1200
+    large_pizza = 1800
+    #  EXTRAS
+    pepperone = 30
+    cheese = 50
 
-    print(small)
-    print(medium)
-    print(large)
-    #print("Enter 1 , 2 or 3 \n")
-    choice = int(input("Choose one number between 1 2 and 3\n"))
+    print(f"Choose 1 for Small pizza = {small_pizza}\n")
+    print(f"Choose 2 for Medium Pizza = {medium_pizza}\n")
+    print(f"Choose 3 for Large pizza = {large_pizza}\n")
+    choice = int(input("Enter Your Choice Here: "))
     my_Choice(choice)
 
 def my_Choice(choice):
-    #print("1 (Small Pizza)\n2 (Medium Pizza)\n3(Large Pizza)\n")
-   # choice = int(input("Choose one number make your order between 1, 2 and 3: "))
     if choice == 1:
-        print(f"You orders Small Pizza ")
+        print("You ordered Small Pizza ")
     elif choice == 2:
-        print(f"You ordered Medium Pizza ")
+        print("You ordered Medium Pizza ")
     elif choice == 3:
-        print(f"You ordered Large Pizza")
+        print("You ordered Large Pizza")
     else:
-        print("You entered an invalid choice please choose again\n!")
+        print("You entered an invalid choice!! Try again\n!")
+        welcome_menu()
 welcome()
-

@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+#  This welcome_menu is a function that welcome a user to the available menu in the pizza inn restaurant.
+# It allows user to see all the prices of the pizza and allows them to see how they will make choices on the pizza type they want and also allows the to choose
+#  It then call the next function which is the my_Choice function
+
 def welcome_menu():
     print("Thank you for visiting Dianas Pizza Inn\nHere are the orders available\n")
     small_pizza = 800
@@ -12,20 +16,25 @@ def welcome_menu():
 
     my_Choice(choice, small_pizza, medium_pizza, large_pizza)
 
+#  This function, my_Choice is used to check the choice the user made when choosing the type of pizza they want.
+#  It allows them to see what they ordered and the prices
+#  This function also calls the extra function to ask if the user would want anything extra apart from the pizza
 
 def my_Choice(choice, small_pizza, medium_pizza, large_pizza):
     if choice == 1:
-        print("You ordered Small Pizza ")
+        print(f"You ordered small pizza = {small_pizza} ")
     elif choice == 2:
-        print("You ordered Medium Pizza ")
+        print(f"You ordered medium pizza = {medium_pizza} ")
     elif choice == 3:
-        print("You ordered Large Pizza")
+        print(f"You ordered large pizza = {large_pizza}")
     else:
-        print("You entered an invalid choice!! Try again\n!")
+        print("You entered an invalid choice!! Try again\n")
         welcome_menu()
 
     extras(choice, small_pizza, large_pizza, medium_pizza)
 
+#  This function is used to add extras to the users already ordered pizza type
+#  the function allows user to either add or not add any extra, if the user clicks no by mistakes, it still confirms if they are sure they dont want any extras and procced to payment in both of the cases
 
 def extras(choice, small_pizza, large_pizza, medium_pizza):
     pepperoni = 50

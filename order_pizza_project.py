@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
 #  This welcome_menu is a function that welcome a user to the available menu in the pizza inn restaurant.
-#  It allows user to see all the prices of the pizza and allows them to see how they 
-#  Will make choices on the pizza type they want and also allows them to make a choice
-#  It then call the next function which is the my_Choice function
+#  It allows user to see all the prices of the pizza
 
 def welcome_menu(choice):
     print("Thank you for visiting Dianas Pizza Inn\nHere are the orders available\n")
@@ -22,8 +20,7 @@ def welcome_menu(choice):
     user_input(choice, small_pizza, medium_pizza, large_pizza)
 
 #  This is a loop to check if a user has entered a non integer value
-#  While making the choice of the pizza type they want
-#  It will print an error message if they actually choose a non int value
+
 def user_input(choice, small_pizza, medium_pizza, large_pizza):
     while True:
         try:
@@ -37,8 +34,6 @@ def user_input(choice, small_pizza, medium_pizza, large_pizza):
     my_Choice(choice, small_pizza, medium_pizza, large_pizza)
 
 #  This function, my_Choice is used to check the choice the user made when choosing the type of pizza they want.
-#  It allows them to see what they ordered and the prices
-#  This function also calls the extra function to ask if the user would want anything extra apart from the pizza
 
 def my_Choice(choice, small_pizza, medium_pizza, large_pizza):
     if choice == 1:
@@ -54,8 +49,6 @@ def my_Choice(choice, small_pizza, medium_pizza, large_pizza):
     extras(choice, small_pizza, medium_pizza, large_pizza)
 
 #  This function is used to add extras to the users already ordered pizza type
-#  The function allows user to either add or not add any extra, if the user clicks no by mistakes,
-#  It still confirms if they are sure they dont want any extras and procced to payment in both of the cases
 
 def extras(choice, small_pizza, medium_pizza, large_pizza):
     pepperoni = 50

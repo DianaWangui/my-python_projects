@@ -6,9 +6,9 @@ def password_gen():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['@', '£', '%', '^', '*', '&', '~', '¬']
     print("Welcome to a password generator, making it easier for you!")
-    noOfLetters = int(input("Enter the number of letter you want to use: "))
-    noOfNumbers = int(input("Enter the number of numbers you want to use: "))
-    noOfSymbols = int(input("Enter the number of symbols you want to use: "))
+    noOfLetters = int(input("Enter the number of letter you want to use in your password: "))
+    noOfNumbers = int(input("Enter the number of numbers you want to use in your password: "))
+    noOfSymbols = int(input("Enter the number of symbols you want to use in your password: "))
 
     list_password = []
 
@@ -34,4 +34,4 @@ def password_gen():
 
 
 str_password = password_gen()
-print(f"password is {str_password}")
+print(f"\nYour password is: {str_password}")

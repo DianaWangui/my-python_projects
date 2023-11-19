@@ -32,7 +32,11 @@ while True:
     
     choice = input("Enter 'e' for encryption and 'd' for decryption: ")
     text = input("Enter your message to decrypt or encrypt: ")
-    shift_no = int(input("Enter the number of time you want to shift: "))
+    try:
+        shift_no = int(input("Enter the number of time you want to shift: "))
+    except ValueError:
+        print("Invalid shift value. Enter valid integer\n")
+        continue
     
     if choice == "e":
         encryption(message = text,shift = shift_no)

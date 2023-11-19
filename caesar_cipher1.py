@@ -3,7 +3,7 @@
 #This function is used for shifting the element according to user input
 def shift_char(char, shift):
     if char.isalpha():
-        start = ord('a') if char.islower else ord('A')  #initializing where to start
+        start = ord('a') if char.islower() else ord('A')  #initializing where to start
         position = ord(char) - start  #setting position of our charater
         new_position = (position + shift) % 26  #new position after shifting
         return chr(new_position + start)  # comverting new position to a character

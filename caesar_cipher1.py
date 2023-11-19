@@ -1,30 +1,31 @@
 #!/usr/bin/python3
-a = ('a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+#a = ('a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+
+
+def shift_char(char, shift):
+    if char.isalpha():
+        start = ord('a') if char.islower else ord('A')
+        position = ord(char) - start
+        new_position = (position + shift) % 26
+        return chr(new_position + start)
+    else:
+        return char
+
 
 def encryption(message, shift):
-    cipher = ""
-    len_a = len(a)
+    encrypt_list = []
     for char in message:
-        if char in a:
-            position = a.index(char)
-            new_position = (position + shift) % len_a
-            cipher += a[new_position]
-        else:
-            cipher += char
-    print(f"result: {cipher}")
+        encrypt_list.append(shift_char(char, shift))
+    result = "".join(encrypt_list)
+    print(f"Your encryption text is: {result}")
 
 
 def decryption(message, shift):
-    cipher = ""
-    len_a = len(a)
+    decrypt_list = []
     for char in message:
-        if char in a:
-            position = a.index(char)
-            new_position = (position - shift) % len_a
-            cipher += a[new_position]
-        else:
-            cipher += char
-    print(f"result: {cipher}")
+        decrypt_list.append(shift_char(char, -shift))
+    cipher = "".join(decrypt_list)
+    print(f"Your decryption text is: {cipher}")
 
 
 while True:
@@ -43,7 +44,7 @@ while True:
     elif choice == "d":
         decryption (message = text, shift = shift_no)
     else:
-        print("Error")
+        print("Invalid input please")
 
 
     cont = input("Type 'yes' if you want to do repeat, otherwise type 'no': ")

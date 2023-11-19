@@ -4,8 +4,8 @@
 def shift_char(char, shift):
     if char.isalpha():
         start = ord('a') if char.islower() else ord('A')  #initializing where to start
-        position = ord(char) - start  #setting position of our charater
-        new_position = (position + shift) % 26  #new position after shifting
+        position = ord(char) - start
+        new_position = (position + shift) % 26
         return chr(new_position + start)  # comverting new position to a character
     else:
         return char  # Return the char as it is if its not an alphabet
@@ -13,10 +13,10 @@ def shift_char(char, shift):
 
 #This is the encrypting function it encrypt user message
 def encryption(message, shift):
-    encrypt_list = []  # a list to append all our element after encrption
+    encrypt_list = []
     for char in message:
-        encrypt_list.append(shift_char(char, shift))  #appending all element to the list
-    result = "".join(encrypt_list) # creating a string from the list generated
+        encrypt_list.append(shift_char(char, shift))    #appending all element to the list
+    result = "".join(encrypt_list)    # creating a string from the list generated
     print(f"Your encryption text is: {result}")
 
 

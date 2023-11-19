@@ -3,36 +3,46 @@ a = ('a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', '
 
 def encryption(message, shift):
     cipher = ""
+    len_a = len(a)
     for char in message:
-        position = a.index(char)
-        new_position = position + shift
-        cipher += a[new_position]
+        if char in a:
+            position = a.index(char)
+            new_position = (position + shift) % len_a
+            cipher += a[new_position]
+        else:
+            cipher += char
     print(f"result: {cipher}")
+
 
 def decryption(message, shift):
     cipher = ""
+    len_a = len(a)
     for char in message:
-        position = a.index(char)
-        new_position = position - shift
-        cipher += a[new_position]
+        if char in a:
+            position = a.index(char)
+            new_position = (position - shift) % len_a
+            cipher += a[new_position]
+        else:
+            cipher += char
     print(f"result: {cipher}")
 
-def do():
+
+while True:
     print("Welcome to an encyption program")
-    choice = input("Enter 'encrypt' for encryption and 'decrypt' for decryption: ")
+    
+    choice = input("Enter 'e' for encryption and 'd' for decryption: ")
     text = input("Enter your message to decrypt or encrypt: ")
     shift_no = int(input("Enter the number of time you want to shift: "))
-    if choice == "encrypt":
+    
+    if choice == "e":
         encryption(message = text,shift = shift_no)
-    elif choice == "decrypt":
+    elif choice == "d":
         decryption (message = text, shift = shift_no)
     else:
         print("Error")
 
-do()
-cont = input("Type 'yes' if you want to do repeat again, otherwise type 'no': ")
-if cont == "yes":
-    do()
-else:
-    print("See you soon")
 
+    cont = input("Type 'yes' if you want to do repeat, otherwise type 'no': ")
+    if cont.lower() != "yes":
+        print("See you soon")
+        break

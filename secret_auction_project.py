@@ -3,7 +3,6 @@
 import os
 
 def add_to_dict(data_dict):
-    user_data = {}
     name = input("Enter your name: ")
     bid = int(input("Whats your bid: "))
     data_dict[name] = bid
@@ -18,10 +17,10 @@ def add_to_dict(data_dict):
 user_data = {}
 add_to_dict(user_data)
 while True:
-    choice = input("Is anyone else ready to bid, Y for yes and N for no: ")
-    if choice == 'Y' or 'y':
+    choice = input("Is anyone else ready to bid, yes or no: ")
+    if choice.lower() == 'y':
         add_to_dict(user_data)
-    elif choice == 'n' or 'N':
+    elif choice.lower() == 'n':
         break
     else:
         print("Invalid input please enter 'Y' or 'N'")

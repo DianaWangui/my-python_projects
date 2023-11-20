@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+
 # function to add input to a dictionary (data_dict): dictionary we are adding data
 def add_to_dict(data_dict):
     name = input("Enter your name: ")
@@ -18,13 +19,12 @@ def add_to_dict(data_dict):
             os.system('clear')
     clear_s()
 
+
 # initializing an empty dictionary
 user_data = {}
+
 # adding first user data to the dictionary
 add_to_dict(user_data)
-
-#test
-print(user_data)
 
 # creating an infinite loop to enter new bidders until user says no then it breaks out of the loop
 while True:

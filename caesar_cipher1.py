@@ -17,7 +17,7 @@ def encryption(message, shift):
     for char in message:
         encrypt_list.append(shift_char(char, shift))    #appending all element to the list
     result = "".join(encrypt_list)    # creating a string from the list generated
-    print(f"Your encryption text is: {result}")
+    print(f"\nYour encryption text is: {result}")
 
 
 # Function for decrypting user message
@@ -26,13 +26,13 @@ def decryption(message, shift):
     for char in message:
         decrypt_list.append(shift_char(char, -shift))  # using negative to shift to the right when decrypting
     cipher = "".join(decrypt_list)
-    print(f"Your decryption text is: {cipher}")
+    print(f"\nYour decryption text is: {cipher}")
 
 
 
 # Where our program starts to execute and calling each function
 while True:
-    print("Welcome to an encyption program")
+    print("Welcome to an encyption program\n")
     
     choice = input("Enter 'e' for encryption and 'd' for decryption: ")
     text = input("Enter your message to decrypt or encrypt: ")
@@ -53,7 +53,7 @@ while True:
 
 
     # this will ask if user want to repeat the process of encryption again    
-    cont = input("Type 'yes' if you want to do repeat, otherwise type 'no': ")
+    cont = input("\nType 'yes' if you want to do repeat, otherwise type 'no': ")
     if cont.lower() != "yes":
         print("See you soon")
         break

@@ -77,3 +77,39 @@ if __name__ == "__main__":
   r.width = 6
   print(f'Area of the rectangle with length 4 and width 6 is {r.area_rectangle()}')
   print(f'Perimeter of the rectangle with length 4 and width 6 is {r.perimeter_rectangle()}')
+
+
+"""
+Class inheritance to find area and perimeter of a square
+using class Rectangle as the parent or super class
+"""
+#Printing a line to separate outputs
+print()
+class Square(Rectangle):
+
+  def __init__(self, side=0):
+    super().__init__(self, side)
+    self.__length = side
+  @property
+  def side(self):
+    return self.__length
+  @side.setter
+  def side(self, value):
+    if not isinstance(value, int):
+      raise TypeError("Side should be an integer")
+    if value <= 0:
+      raise ValueError("Side should be greater than zero")
+    self.__length = value
+    self.__width = value
+  def area_square(self):
+    return self.__length ** 2
+  def perimeter_square(self):
+    return 4 * self.__length
+# Testing the code
+if __name__ == "__main__":
+  s = Square()
+  print(f'Area of the square with no dimension given is {s.area_square()}')
+  print(f'Perimeter of the square with no dimension given is {s.perimeter_square()}')
+  s.side = 5
+  print(f'Area of the square with side 5 is {s.area_square()}')
+  print(f'Perimeter of the square with side 5 is {s.perimeter_square()}')

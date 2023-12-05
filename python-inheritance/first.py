@@ -21,7 +21,7 @@ boy_1.flirt()
 
 # obtainig method work() from the class Male without
 # printing one in Human class by default
-Male.work(boy_1)
+boy_1.work()
 
 # How to see how method are arranged in order
 print(Boy.mro())
